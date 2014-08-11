@@ -1,0 +1,31 @@
+###
+# Ignore Mac OS X files
+###
+.DS_Store
+
+###
+# Ignore ruby files
+###
+.rake_test_cache
+
+###
+# Ignore Chef key files and secrets
+###
+.chef/*.pem
+.chef/encrypted_data_bag_secret
+
+###
+# Ignore vagrant files
+###
+.vagrant
+
+###
+# Ignore Sublime Text files
+###
+*.sublime-project
+*.sublime-workspace
+
+###
+# Ignore Drupal local settings
+###
+docroot/sites/*/local.settings.php
