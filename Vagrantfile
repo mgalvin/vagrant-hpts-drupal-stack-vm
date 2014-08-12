@@ -119,7 +119,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.data_bags_path = "./provisioners/chef-solo/data_bags"
     #chef.add_role "web"
     
+    chef.add_recipe "apt"
+
+    chef.add_recipe "openssl"
+
     #chef.add_recipe "mysql"
+    chef.add_recipe "percona"
+    chef.add_recipe "percona::package_repo"
+    chef.add_recipe "percona::client"
+    chef.add_recipe "percona::server"
+    chef.add_recipe "percona::toolkit"
+
+    chef.add_recipe "memcached"
+
     #chef.add_recipe "apache2"
     
     #chef.json = {
