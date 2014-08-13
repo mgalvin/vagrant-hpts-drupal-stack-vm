@@ -58,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
   #config.vm.synced_folder "./docroot", "/var/www", type: "nfs"
   #config.vm.synced_folder ".", "/home/vagrant/devlocal", type: "nfs"
-  config.vm.synced_folder "docroot", "/var/www"
+  config.vm.synced_folder "docroot", "/var/www/nginx-default"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -114,6 +114,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # some recipes and/or roles.
   #
   config.vm.provision "chef_solo" do |chef|
+    chef.custom_config_path = 'chef_streaming_fix.rb'
     chef.cookbooks_path = "./provisioners/chef-solo/cookbooks"
     chef.roles_path = "./provisioners/chef-solo/roles"
     chef.data_bags_path = "./provisioners/chef-solo/data_bags"
@@ -132,9 +133,31 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_recipe "memcached"
 
+    chef.add_recipe "npd-redis"
+    #chef.add_recipe "redis::client"
+    #chef.add_recipe "redis::default"
+    #chef.add_recipe "redis::install_from_package"
+    #chef.add_recipe "redis::install_from_release"
+    #chef.add_recipe "redis::server"
+
+    chef.add_recipe "nginx"
+
+    chef.add_recipe "php-fpm"
+
+    chef.add_recipe "java"
     #chef.add_recipe "apache2"
     
-    #chef.json = {
+    chef.json = {
+      apt: {
+        'compile_time_update' => true
+      },
+      memcached: {
+        'memory' => '128'
+      },
+      java: {
+        'install_flavor' => 'openjdk',
+        'jdk_version' => '7'
+      }
     #  apache: {
     #    default_site_enabled: true
     #  },
@@ -143,7 +166,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #    server_username: 'root',
     #    server_root_password: 'root'
     #  }
-    #}
+    }
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
