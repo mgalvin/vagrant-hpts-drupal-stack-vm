@@ -4,13 +4,15 @@ What you're getting:
 
 Full Drupal Stack in one small package for local development using the high performance tool chain:
 
-Ubuntu 14.04 (trusty)
-Percona (high performance version of MySQL) (https://github.com/phlipper/chef-percona)
-memcached (https://github.com/opscode-cookbooks/memcached)
-#redis (https://community.opscode.com/cookbooks/redis)
-npd-redis (custom cookbook as temporary solution on trusty64)
-nginx (https://community.opscode.com/cookbooks/nginx)
-php-fpm (http://cookbooks.opscode.com/cookbooks/php-fpm)
+ * Ubuntu 14.04 (trusty)
+ * Percona (high performance version of MySQL) (https://github.com/phlipper/chef-percona)
+ * memcached (https://github.com/opscode-cookbooks/memcached)
+ * #redis (https://community.opscode.com/cookbooks/redis)
+ * npd-redis (custom cookbook as temporary solution on trusty64)
+ * nginx (https://community.opscode.com/cookbooks/nginx)
+ * php-fpm (http://cookbooks.opscode.com/cookbooks/php-fpm)
+ * java (https://supermarket.getchef.com/cookbooks/java)
+ * npd-solr-tomcat (custom cookbook as temporary solution on trusty64)
 
 I'm sure this isn't perfect, and is a work in progress
 

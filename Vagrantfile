@@ -124,6 +124,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_recipe "openssl"
 
+    chef.add_recipe "npd-nload"
+
     #chef.add_recipe "mysql"
     chef.add_recipe "percona"
     chef.add_recipe "percona::package_repo"
@@ -140,13 +142,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #chef.add_recipe "redis::install_from_release"
     #chef.add_recipe "redis::server"
 
-    chef.add_recipe "nginx"
+    chef.add_recipe "npd-nginx"
+    #chef.add_recipe "nginx"
 
     chef.add_recipe "php-fpm"
+    chef.add_recipe "php"
+    chef.add_recipe "npd-php"
 
     chef.add_recipe "java"
+
+    chef.add_recipe "npd-solr-tomcat"
     #chef.add_recipe "apache2"
     
+    chef.add_recipe "varnish"
+
     chef.json = {
       apt: {
         'compile_time_update' => true
