@@ -29,24 +29,39 @@ I tested all of this on Mac OS X Mavericks (10.9.4). If this process is differen
 
 Vagrant on its own is great, but there are some utilites we need when using the provisioners.
 
-Install XCode (it's free and you should have it installed already so you have developer tools)
-xcode-select --install
-Download and install VirtualBox 4.3.12
-Download and install Vagrant 1.6.3
+Install development tools:
 
-`sudo gem update`
-`sudo gem install berkshelf`
-`sudo gem install omnibus`
-`sudo vagrant plugin install vagrant-berkshelf --plugin-version '= 2.0.1'`
-`sudo vagrant plugin install vagrant-hostmanager`
-`sudo vagrant plugin install vagrant-omnibus`
+ * Install XCode (it's free and you should have it installed already so you have developer tools)
+ * `xcode-select --install`
 
-`git clone git@github.com:mgalvin/vagrant-full-drupal-stack-vm.git hpts`
+Install VirtualBox & Vagrant:
 
-`cd htps`
-`vagrant up`
+ * Download and install VirtualBox 4.3.12
+ * Download and install Vagrant 1.6.3
+
+Install needed gems:
+
+ * `sudo gem update`
+ * `sudo gem install berkshelf`
+ * `sudo gem install omnibus`
+
+Install needed vagrant plugins
+ * `sudo vagrant plugin install vagrant-berkshelf --plugin-version '= 2.0.1'`
+ * `sudo vagrant plugin install vagrant-hostmanager`
+ * `sudo vagrant plugin install vagrant-omnibus`
+
+ * `git clone git@github.com:mgalvin/vagrant-full-drupal-stack-vm.git hpts`
+
+ * `cd htps`
+ * `vagrant up`
+
+Browse in your local browser to:
+
+http://trusty64/
+
+# Contributing
 
 If you want to work on altering the provisioning scripts, also install
 
-sudo gem install bundler
-Chef Worstation Client: http://www.getchef.com/chef/install/
+ * `sudo gem install bundler`
+ * Chef Worstation Client: http://www.getchef.com/chef/install/
