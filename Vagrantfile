@@ -156,6 +156,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     chef.add_recipe "varnish"
 
+    chef.add_recipe "haproxy"
+
+    chef.add_recipe "npd-siege"
+
     chef.json = {
       apt: {
         'compile_time_update' => true
@@ -166,6 +170,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       java: {
         'install_flavor' => 'openjdk',
         'jdk_version' => '7'
+      },
+      haproxy: {
+        'incoming_port' => '81'
       }
     #  apache: {
     #    default_site_enabled: true

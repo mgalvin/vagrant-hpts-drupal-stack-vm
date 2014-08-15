@@ -13,6 +13,7 @@ Full Drupal Stack in one small package for local development using the high perf
  * php-fpm (http://cookbooks.opscode.com/cookbooks/php-fpm)
  * java (https://supermarket.getchef.com/cookbooks/java)
  * npd-solr-tomcat (custom cookbook as temporary solution on trusty64)
+ * haproxy (https://supermarket.getchef.com/cookbooks/haproxy)
 
 I'm sure this isn't perfect, and is a work in progress
 
