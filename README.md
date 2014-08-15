@@ -45,19 +45,21 @@ Install needed gems:
  * `sudo gem install berkshelf`
  * `sudo gem install omnibus`
 
-Install needed vagrant plugins
+Install needed vagrant plugins:
  * `sudo vagrant plugin install vagrant-berkshelf --plugin-version '= 2.0.1'`
  * `sudo vagrant plugin install vagrant-hostmanager`
  * `sudo vagrant plugin install vagrant-omnibus`
 
+Clone this repository:
  * `git clone git@github.com:mgalvin/vagrant-full-drupal-stack-vm.git hpts`
 
+Start the VM:
  * `cd htps`
  * `vagrant up`
 
 Browse in your local browser to:
 
-http://trusty64/
+ * http://trusty64.local/
 
 # Contributing
 
