@@ -5,6 +5,8 @@ What you're getting:
 Full Drupal Stack in one small package for local development using the high performance tool chain:
 
  * Ubuntu 14.04 (trusty)
+ * git (https://supermarket.getchef.com/cookbooks/git)
+ * drush (custom cookbook as temporary solution on trusty64)
  * npd-siege (custom cookbook as temporary solution on trusty64)
  * npd-nload (custom cookbook as temporary solution on trusty64)
  * Percona (high performance version of MySQL) (https://github.com/phlipper/chef-percona)

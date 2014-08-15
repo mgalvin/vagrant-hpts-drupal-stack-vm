@@ -118,14 +118,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "./provisioners/chef-solo/cookbooks"
     chef.roles_path = "./provisioners/chef-solo/roles"
     chef.data_bags_path = "./provisioners/chef-solo/data_bags"
-    #chef.add_role "web"
     
     chef.add_recipe "apt"
 
     chef.add_recipe "openssl"
 
+    chef.add_recipe "git"
     chef.add_recipe "npd-nload"
     chef.add_recipe "npd-siege"
+
+    chef.add_recipe "nfs"
+    #chef.add_recipe "gluster"
+    chef.add_recipe "npd-glusterfs"
 
     #chef.add_recipe "mysql"
     chef.add_recipe "percona"
@@ -156,23 +160,28 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "varnish"
     chef.add_recipe "haproxy"
 
-    chef.add_recipe "nfs"
-    chef.add_recipe "gluster"
+    # Drupal App
+#    chef.add_recipe "npd-drush"
+    
+    # Wordpress App
+
+    # Symfony App
 
     chef.json = {
-      apt: {
-        'compile_time_update' => true
-      },
-      memcached: {
-        'memory' => '128'
-      },
-      java: {
-        'install_flavor' => 'openjdk',
-        'jdk_version' => '7'
-      },
-      haproxy: {
-        'incoming_port' => '81'
-      }
+      # apt: {
+      #   'compile_time_update' => true
+      # },
+      # memcached: {
+      #   'memory' => '128'
+      # },
+      # java: {
+      #   'install_flavor' => 'openjdk',
+      #   'jdk_version' => '7'
+      # },
+      # haproxy: {
+      #   'incoming_port' => '81'
+      # }
+
       #apache: {
       #  default_site_enabled: true
       #},

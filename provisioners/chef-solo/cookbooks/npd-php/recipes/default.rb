@@ -12,6 +12,10 @@ bash "Installing PHP extensions" do
    EOF
 end
 
+package 'php5-cli' do
+	action :install
+end
+
 package 'php5-mysql' do
 	action :install
 end
