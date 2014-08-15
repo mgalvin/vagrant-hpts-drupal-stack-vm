@@ -125,6 +125,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "openssl"
 
     chef.add_recipe "npd-nload"
+    chef.add_recipe "npd-siege"
 
     #chef.add_recipe "mysql"
     chef.add_recipe "percona"
@@ -134,7 +135,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "percona::toolkit"
 
     chef.add_recipe "memcached"
-
     chef.add_recipe "npd-redis"
     #chef.add_recipe "redis::client"
     #chef.add_recipe "redis::default"
@@ -150,15 +150,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "npd-php"
 
     chef.add_recipe "java"
-
     chef.add_recipe "npd-solr-tomcat"
     #chef.add_recipe "apache2"
     
     chef.add_recipe "varnish"
-
     chef.add_recipe "haproxy"
 
-    chef.add_recipe "npd-siege"
+    chef.add_recipe "nfs"
+    chef.add_recipe "gluster"
 
     chef.json = {
       apt: {
@@ -174,14 +173,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       haproxy: {
         'incoming_port' => '81'
       }
-    #  apache: {
-    #    default_site_enabled: true
-    #  },
-    #  mysql: {
-    #    server_hostname: 'localhost',
-    #    server_username: 'root',
-    #    server_root_password: 'root'
-    #  }
+      #apache: {
+      #  default_site_enabled: true
+      #},
+      #mysql: {
+      #  server_hostname: 'localhost',
+      #  server_username: 'root',
+      #  server_root_password: 'root'
+      #}
     }
   end
 
