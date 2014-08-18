@@ -168,19 +168,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Symfony App
 
     chef.json = {
-      # apt: {
-      #   'compile_time_update' => true
-      # },
-      # memcached: {
-      #   'memory' => '128'
-      # },
-      # java: {
-      #   'install_flavor' => 'openjdk',
-      #   'jdk_version' => '7'
-      # },
-      # haproxy: {
-      #   'incoming_port' => '81'
-      # }
+      apt: {
+        'compile_time_update' => true
+      },
+      memcached: {
+        'memory' => '128'
+      },
+      java: {
+        'install_flavor' => 'openjdk',
+        'jdk_version' => '7'
+      },
+      haproxy: {
+        'incoming_port' => '81'
+      }
 
       #apache: {
       #  default_site_enabled: true
